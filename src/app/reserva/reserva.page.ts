@@ -35,6 +35,9 @@ export class ReservaPage implements OnInit {
 ...this.reservaForm.value,
 criadoEm: new Date().toISOString()
     };
+
+    const reservaSalvas = JSON.parse(localStorage.getItem('reservas') || '[]');
+    reservaSalvas.push(novaReserva);
   }
   async mostrarToast(msg: string) {
     const toast = await this.toastCrtl.create({
