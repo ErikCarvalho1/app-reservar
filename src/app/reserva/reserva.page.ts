@@ -38,6 +38,13 @@ criadoEm: new Date().toISOString()
 
     const reservaSalvas = JSON.parse(localStorage.getItem('reservas') || '[]');
     reservaSalvas.push(novaReserva);
+
+    localStorage.setItem('reservas', JSON.stringify(reservaSalvas) );
+    await this.mostrarToast('Reserva registrada com sucesso!');
+
+    this.reservaForm.reset({
+      pessoas: 2 
+    })
   }
   async mostrarToast(msg: string) {
     const toast = await this.toastCrtl.create({
