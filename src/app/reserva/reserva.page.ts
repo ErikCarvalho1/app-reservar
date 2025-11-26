@@ -1,17 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { EmailValidator, FormControl, FormControlDirective, FormGroup, FormsModule, Validators , ReactiveFormsModule} from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonToolbar, ToastController, IonButtons, IonMenuButton, IonCardTitle, IonCardHeader , IonCard, IonText, IonLabel, IonInput, IonItem, IonList, IonCardContent } from '@ionic/angular/standalone';
+import { FormControl, FormGroup, FormsModule, Validators , ReactiveFormsModule} from '@angular/forms';
+import { IonContent, IonHeader, IonTitle, IonToolbar, ToastController, IonButtons, IonMenuButton, IonCardTitle, IonCardHeader , IonCard, IonText, IonLabel, IonInput, IonItem, IonList, IonCardContent, IonRow, IonCol, IonGrid, IonSelectOption, IonButton, IonFooter} from '@ionic/angular/standalone';
 import { from } from 'rxjs';
 import { Title } from '@angular/platform-browser';
-import { card, add } from 'ionicons/icons';
+import { card, add, camera } from 'ionicons/icons';
+import { addIcons } from 'ionicons';
 
 @Component({
   selector: 'app-reserva',
   templateUrl: './reserva.page.html',
   styleUrls: ['./reserva.page.scss'],
   standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonButtons, IonMenuButton,  ReactiveFormsModule, IonCardTitle, IonCardHeader, IonCard, IonText, IonLabel, IonInput, IonItem, IonList, IonCardContent , IonItem ]
+  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonButtons, IonMenuButton,  ReactiveFormsModule, IonCardTitle, IonCardHeader, IonCard, IonText, IonLabel, IonInput, IonItem, IonList, IonCardContent, IonRow, IonCol, IonGrid, IonSelectOption, IonButton, IonFooter]
 })
 export class ReservaPage implements OnInit {
   
@@ -28,7 +29,7 @@ export class ReservaPage implements OnInit {
   });
 
   constructor(private toastCrtl: ToastController) {
-      addIcons({add});}
+      addIcons({camera,add});}
   
   async confirmaReserva(){
     if(this.reservaForm.invalid){

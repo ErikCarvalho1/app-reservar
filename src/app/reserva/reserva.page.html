@@ -22,107 +22,121 @@
               Nome completo <ion-text color="danger">*</ion-text> 
             </ion-label>
             <ion-input
-            type="text"
-            minilength="2"  
-            placeholder="Digite seu nome"
-            formGroupName="nome"
-            > 
-            </ion-input>
-            <ion-item>
-              <!-- Campo Telefone -->
-               <ion-label position="stacked">
-                Telefone / WhatsApp <ion-text color="danger"></ion-text>
-               </ion-label>
-               <ion-input type="tel"
-               formGroupName="telefone"
-               inputmod="tel"
-               placeholder="11999999999"
-               maxlength="11"
-               minlength="10"
-               required
-               >
-               </ion-input>
-            </ion-item>
-            <ion-item>
-              <!-- Campo Email -->
-               <ion-label position="stacked">
-                Email <ion-text color="danger">*</ion-text>
-                <ion-input 
-                type="email"
-                inputmode="email"
-                placeholder="email@exemplo.com"
-                formGroupNAme="email"
-                ></ion-input>
-               </ion-label>
-            </ion-item>
+              type="text"
+              minlength="2"  
+              placeholder="Digite seu nome"
+              formControlName="nome"
+            ></ion-input>
+          </ion-item>
+          <!-- Campo Telefone -->
+          <ion-item>
+            <ion-label position="stacked">
+              Telefone / WhatsApp
+            </ion-label>
+            <ion-input
+              type="tel"
+              formControlName="telefone"
+              inputmode="tel"
+              placeholder="11999999999"
+              maxlength="11"
+              minlength="10"
+              required
+            ></ion-input>
+          </ion-item>
+
+          <!-- Campo Email -->
+          <ion-item>
+            <ion-label position="stacked">
+              Email <ion-text color="danger">*</ion-text>
+            </ion-label>
+            <ion-input 
+              type="email"
+              inputmode="email"
+              placeholder="email@exemplo.com"
+              formControlName="email"
+            ></ion-input>
           </ion-item>
         </ion-list>
       </ion-card-content>
     </ion-card>
+
     <ion-card>
-    <!-- Detalhes da Reserva -->
      <ion-card-header>
        <ion-card-title>Detalhes da Reserva</ion-card-title>
      </ion-card-header>
      <ion-card-content>
       <ion-grid>
         <ion-row>
-          <ion-item>
           <ion-col size="12" size-md="6">
+            <ion-item>
               <ion-label position="stacked">
                 Data da Reserva <ion-text color="danger">*</ion-text>
               </ion-label>
-              <ion-datetime formGroupName="data"
-              presentation="date"
-              placeholder="Selecione a Data">
-              
+              <ion-datetime formControlName="data"
+                presentation="date"
+                placeholder="Selecione a Data">
               </ion-datetime>
-         
+            </ion-item>
+          </ion-col>
 
-          </ion-col>  
-         </ion-item>
-          
           <ion-col size="12" size-md="6">
             <ion-item>
-            <ion-label position="stacked">
-               Horário da Reserva <ion-text color="danger">*</ion-text>
-            </ion-label>
-            <ion-datetime 
-            formGroupName="hora"
-            presentation="time"
-            placeholder="Selecione o Horário"
-            >
-              
-            </ion-datetime>
-          </ion-item>
+              <ion-label position="stacked">
+                Horário da Reserva <ion-text color="danger">*</ion-text>
+              </ion-label>
+              <ion-datetime 
+                formControlName="hora"
+                presentation="time"
+                placeholder="Selecione o Horário">
+              </ion-datetime>
+            </ion-item>
           </ion-col>
-        <ion-col size="12" size-md="6">
-        <ion-item>
-          <ion-label position="stacked">Preferencia da mesa</ion-label>    
-          <ion-select 
-          formGroupName="preferencia" 
-          interface="popover" 
-          placeholder="Selecione uma opção">
-            <ion-select-option value="Janela">Proximo à janela</ion-select-option>
-            <ion-select-option value="Externa">Área externa</ion-select-option>
-            <ion-select-option value="Interna">Área  interna</ion-select-option>
-            <ion-select-option value="SemPreferencia">Sem preferencia</ion-select-option>
-          </ion-item>
-      </ion-col>
-        <ion-col size="12" size-md="6">
-        <ion-item>
-          <ion-label position="stacked">Ocasião Especial</ion-label>    
-          <ion-select 
-          formGroupName="Ocasiao" 
-          interface="popover" 
-          placeholder="Selecione uma opção">
-            <ion-select-option value="aniversario">Aniversário</ion-select-option>
-            <ion-select-option value="casal">Jatar Romantico</ion-select-option>
-            <ion-select-option value="familiar">Reunião de familia</ion-select-option>
-            <ion-select-option value="negocio">Reunião de Negócios</ion-select-option>
-          </ion-item>
-      </ion-col>
+
+          <ion-col size="12" size-md="6">
+            <ion-item>
+              <ion-label position="stacked">
+                Numero de Pessoas <ion-text color="danger">*</ion-text>
+              </ion-label>
+              <ion-input
+                type="number"
+                formControlName="pessoas"
+                placeholder="Informe o total de pessoas"
+              ></ion-input>
+            </ion-item>
+          </ion-col>
+
+          <ion-col size="12" size-md="6">
+            <ion-item>
+              <ion-label position="stacked">Preferencia da mesa</ion-label>
+              <ion-select 
+                formControlName="preferencia" 
+                interface="popover" 
+                placeholder="Selecione uma opção">
+                <ion-select-option value="Janela">Proximo à janela</ion-select-option>
+                <ion-select-option value="Externa">Área externa</ion-select-option>
+                <ion-select-option value="Interna">Área interna</ion-select-option>
+                <ion-select-option value="SemPreferencia">Sem preferencia</ion-select-option>
+              </ion-select>
+            </ion-item>
+          </ion-col>
+
+          <ion-col size="12" size-md="6">
+            <ion-item>
+              <ion-label position="stacked">Ocasião Especial</ion-label>
+              <ion-select 
+                formControlName="ocasiao" 
+                interface="popover" 
+                placeholder="Selecione uma opção">
+                <ion-select-option value="aniversario">Aniversário</ion-select-option>
+                <ion-select-option value="casal">Jantar Romantico</ion-select-option>
+                <ion-select-option value="familiar">Reunião de familia</ion-select-option>
+                <ion-select-option value="negocio">Reunião de Negócios</ion-select-option>
+              </ion-select>
+            </ion-item>
+          </ion-col>
+
         </ion-row>
+
         <ion-row>
           <ion-col size="12">
             <ion-item>
@@ -130,17 +144,40 @@
                 Observações
               </ion-label>
               <ion-textarea
-               formGroupName="Observacoes"
+               formControlName="observacoes"
                rows="4"
                placeholder="Ex.: Restrição alimentar, cadeira para criança, decoração especial..."
-              
               ></ion-textarea>
             </ion-item>
           </ion-col>
         </ion-row>
+
       </ion-grid>
      </ion-card-content>
     </ion-card>
-    
+
+     <ion-footer class="ion-padding-top">
+      <ion-grid>
+        <ion-row>
+          <ion-col size="12" size-md="6">
+              <ion-button expand="block" 
+              fill="outline"
+               type="button"
+               (click)="reservaForm.reset({pessoas: 2})"
+               color="danger">Limpar</ion-button>
+          </ion-col>
+          <ion-col size="12" size-md="6">
+            <ion-button 
+            expand="block"
+            color="primary"
+            type="button"
+            (click)="confirmaReserva()"
+            >  
+              Confirmar Reserva
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+     </ion-footer>
   </form>
 </ion-content>
