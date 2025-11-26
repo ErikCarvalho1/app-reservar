@@ -1,14 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { EmailValidator, FormControl, FormControlDirective, FormGroup, FormsModule, Validators } from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonToolbar , ToastController} from '@ionic/angular/standalone';
+import { EmailValidator, FormControl, FormControlDirective, FormGroup, FormsModule, Validators , ReactiveFormsModule} from '@angular/forms';
+import { IonContent, IonHeader, IonTitle, IonToolbar, ToastController, IonButtons, IonMenuButton, IonCardTitle, IonCardHeader , IonCard, IonText, IonLabel, IonInput, IonItem, IonList, IonCardContent } from '@ionic/angular/standalone';
+import { from } from 'rxjs';
+import { Title } from '@angular/platform-browser';
+import { card, add } from 'ionicons/icons';
 
 @Component({
   selector: 'app-reserva',
   templateUrl: './reserva.page.html',
   styleUrls: ['./reserva.page.scss'],
   standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule]
+  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonButtons, IonMenuButton,  ReactiveFormsModule, IonCardTitle, IonCardHeader, IonCard, IonText, IonLabel, IonInput, IonItem, IonList, IonCardContent , IonItem ]
 })
 export class ReservaPage implements OnInit {
   
@@ -24,7 +27,8 @@ export class ReservaPage implements OnInit {
     observacao: new FormControl(''), 
   });
 
-  constructor(private toastCrtl: ToastController) {}
+  constructor(private toastCrtl: ToastController) {
+      addIcons({add});}
   
   async confirmaReserva(){
     if(this.reservaForm.invalid){
