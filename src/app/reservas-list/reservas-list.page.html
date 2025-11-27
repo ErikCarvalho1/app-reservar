@@ -1,0 +1,24 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>reserva-list</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">reservas-list</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-item *ngFor="let r of reservas; let i = index">
+   
+      <ion-label>
+        <h2>{{r.nome}}</h2>
+        <p>{{r.data}} às {{r.hora}}</p>
+     
+      </ion-label>
+
+  </ion-item>
+
+</ion-content>
